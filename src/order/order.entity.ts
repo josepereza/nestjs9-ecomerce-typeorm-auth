@@ -22,4 +22,7 @@ export class OrderEntity {
 
   @Column({ default: false })
   payed: boolean;
+
+  @Column({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
+  createAt: Date;
 }

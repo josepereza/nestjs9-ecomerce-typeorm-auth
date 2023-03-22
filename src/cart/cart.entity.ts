@@ -30,6 +30,9 @@ export class CartEntity {
   @Column({ default: false })
   assigned: boolean;
 
+  @Column({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
+  createAt: Date;
+  
   @ManyToOne(() => OrderEntity, (order) => order.id, {
     cascade: true,
   })
