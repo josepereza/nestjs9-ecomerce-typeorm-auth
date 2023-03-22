@@ -32,9 +32,9 @@ export class CartEntity {
 
   @Column({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
   createAt: Date;
-  
+
   @ManyToOne(() => OrderEntity, (order) => order.id, {
     cascade: true,
   })
-  items: OrderEntity;
+  items: OrderEntity; // Este campo es el pedido (OrderEntity ) al cual pertenece una linea del carrito(CartEntity)
 }
